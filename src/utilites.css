@@ -1,0 +1,19 @@
+.fs-20 {
+    font-size: 20px;
+}
+.fs-25 {
+    font-size: 25px;
+}
+.fs-30 {
+    font-size: 30px;
+}
+.fs-12 {
+    font-size: 12px;
+}
+.dflex {
+    display: flex;
+}
+
+.isPlaying{
+    color: #1ed760 !important;
+}
