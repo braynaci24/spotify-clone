@@ -4,7 +4,11 @@ body {
   font-family: 'Poppins', sans-serif;
 
 }
-
+.container {
+  background-color: #121212;
+  padding-bottom: 55px;
+}
+/* LOGIN PAGE */
 .container .login-page {
   display: flex;
   align-items: center;
@@ -23,10 +27,10 @@ body {
   width: 200px;
   margin-bottom: 100px;
 }
-.container {
-  background-color: #121212;
-  padding-bottom: 55px;
-}
+
+/* LOGIN PAGE */
+
+/* SONG ITEM */
 
 .container .song-item {
   display: flex;
@@ -68,6 +72,8 @@ body {
   border-radius: 3px;
   font-weight: 600;
 }
+
+/* SONG ITEM */
 
 /*PLAYER SONG*/
 
@@ -117,18 +123,20 @@ body {
   display: flex;
   align-items: center;
 }
-.playlist-name {
-  position: sticky;
-  top: 0;
-  margin: 0;
-  color: #fff;
-  background: #262729;
-  padding: 20px;
-}
 
 .player-buttons-icon {
   background-color: #3e3a39;
   border: none;
   color: #fff;
   margin-right: 6px;
+}
+
+/*PLAYER SONG*/
+.container .playlist-name {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  color: #fff;
+  background: #262729;
+  padding: 20px;
 }

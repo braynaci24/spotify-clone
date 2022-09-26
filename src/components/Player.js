@@ -34,7 +34,7 @@ function Player({currentSong}) {
         }
     }
 
-  return ( 
+    return ( 
     <div className="player-content">
         <div className="player">
             <div className='song-image-with-name'>
@@ -49,7 +49,7 @@ function Player({currentSong}) {
                     {currentSong.artist}
                     </span>
                 </div>
-            </div>
+            </div>{/* End of .song-image-with-name */}
             <div className="player-buttons">
                 <div className="pause-button player-buttons-icon fs-25">
                     <FontAwesomeIcon icon={faPause} />
@@ -65,8 +65,8 @@ function Player({currentSong}) {
                 <button className="next-button player-buttons-icon fs-30 ">
                     <FontAwesomeIcon icon={faCaretRight} />     
                 </button>
-            </div>
-        </div>
+            </div>{/* End of .player-buttons */}
+        </div>{/* End of .player */}
     </div>
   )
 }

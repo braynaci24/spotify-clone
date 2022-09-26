@@ -60,8 +60,6 @@ function App() {
     getCurrentSong();
   }, [token])
 
-
-
   const getPlaylist = async () => {
     const {data} = await axios.get("https://api.spotify.com/v1/playlists/37i9dQZF1DX1tyCD9QhIWF", {
       headers: {
@@ -76,17 +74,15 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-       
          {!token ?
-                    <div className="login-page">
-                      <img src={LoginLogo} alt="" className="login-logo"/>
-                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&&scope=${scope.join(
-                            " "
-                        )}&response_type=${RESPONSE_TYPE}`} className="login-button">Login
-                        to Spotify</a>
-                    </div>
-                    : <div><h3 className="playlist-name">{albumName}</h3><SongItem song={song} currentSong={currentSong && currentSong} setSong={setSong} />  <Player currentSong={currentSong && currentSong} /></div>}
-
+            <div className="login-page">
+              <img src={LoginLogo} alt="" className="login-logo"/>
+                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&&scope=${scope.join(
+                    " "
+                )}&response_type=${RESPONSE_TYPE}`} className="login-button">Login
+                to Spotify</a>
+            </div>
+            : <div><h3 className="playlist-name">{albumName}</h3><SongItem song={song} currentSong={currentSong && currentSong} setSong={setSong} />  <Player currentSong={currentSong && currentSong} /></div>}
       </div>
     </div>
   );

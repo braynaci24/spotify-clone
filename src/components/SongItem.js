@@ -10,7 +10,6 @@ function SongItem ({ song, currentSong, setSong}) {
         const items = Array.from(song);
         const [reorderedItem] = items.splice(results.source.index, 1);
         items.splice(results.destination.index, 0, reorderedItem);
-
         setSong(items);
     }
 
@@ -20,33 +19,33 @@ function SongItem ({ song, currentSong, setSong}) {
                 {(provided)=> (
                     <div className='items' {...provided.droppableProps} ref={provided.innerRef}>
                     {
-                            song.map((items, index) => (
-                            <Draggable key={items.track.id} draggableId={items.track.id} index={index}>
-                                {(provided) => (
-                                    <a href={items.track.uri} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} className='song-item' >
-                                        <div className='song-content'>
-                                            <img src={items.track.album.images[0].url} className='song-image' alt=""/>
-                                            <div className='song-information'>
-                                                <span className={currentSong.isPlaying && currentSong.id === items.track.id ? "song-name isPlaying" : "song-name"} >
-                                                    {items.track.name}
+                        song.map((items, index) => (
+                        <Draggable key={items.track.id} draggableId={items.track.id} index={index}>
+                            {(provided) => (
+                                <a href={items.track.uri} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} className='song-item' >
+                                    <div className='song-content'>
+                                        <img src={items.track.album.images[0].url} className='song-image' alt=""/>
+                                        <div className='song-information'>
+                                            <span className={currentSong.isPlaying && currentSong.id === items.track.id ? "song-name isPlaying" : "song-name"} >
+                                                {items.track.name}
+                                            </span>
+                                            <div>
+                                                <span className='song-lyrics'>
+                                                    LYRICS
                                                 </span>
-                                                <div>
-                                                    <span className='song-lyrics'>
-                                                        LYRICS
-                                                    </span>
-                                                    <span className='singer-name'>
-                                                        {items.track.artists[0].name}
-                                                    </span>
-                                                </div>
+                                                <span className='singer-name'>
+                                                    {items.track.artists[0].name}
+                                                </span>
                                             </div>
-                                        </div>
-                                        <div className='song-settings-icon'>
-                                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                                        </div>
-                                    </a>
-                                )}
-                            </Draggable>
-                            ))
+                                        </div>{/* End of .song-information */}
+                                    </div>{/* End of .song-content */}
+                                    <div className='song-settings-icon'>
+                                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                                    </div>
+                                </a>/* End of .song-item */
+                            )}
+                        </Draggable>
+                        ))
                     }
                     {provided.placeholder}
                     </div>
